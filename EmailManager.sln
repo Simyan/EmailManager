@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailManager.API", "EmailManager.API\EmailManager.API.csproj", "{196E5AD5-7672-4ECE-AA6C-0C767B2BFEF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailManager.Core", "EmailManager.Core\EmailManager.Core.csproj", "{9F007BEB-BCF9-494C-B55D-6549485A0D3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailManager.Infrastructure", "EmailManager.Infrastructure\EmailManager.Infrastructure.csproj", "{43A29E83-7A02-499B-B488-925B9550A9B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailManager.Application", "EmailManager.Application\EmailManager.Application.csproj", "{CBAF7796-B680-4258-9281-FA58089E9A2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailManager.Shared", "EmailManager.Shared\EmailManager.Shared.csproj", "{0A962650-9B60-4061-A062-278A03DD6FE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailManager.Processor", "EmailManager.Processor\EmailManager.Processor.csproj", "{E9B180B5-73ED-41B6-AF02-E531BDE86103}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{196E5AD5-7672-4ECE-AA6C-0C767B2BFEF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{196E5AD5-7672-4ECE-AA6C-0C767B2BFEF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{196E5AD5-7672-4ECE-AA6C-0C767B2BFEF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{196E5AD5-7672-4ECE-AA6C-0C767B2BFEF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F007BEB-BCF9-494C-B55D-6549485A0D3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F007BEB-BCF9-494C-B55D-6549485A0D3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F007BEB-BCF9-494C-B55D-6549485A0D3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F007BEB-BCF9-494C-B55D-6549485A0D3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43A29E83-7A02-499B-B488-925B9550A9B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43A29E83-7A02-499B-B488-925B9550A9B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43A29E83-7A02-499B-B488-925B9550A9B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43A29E83-7A02-499B-B488-925B9550A9B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBAF7796-B680-4258-9281-FA58089E9A2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBAF7796-B680-4258-9281-FA58089E9A2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBAF7796-B680-4258-9281-FA58089E9A2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBAF7796-B680-4258-9281-FA58089E9A2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A962650-9B60-4061-A062-278A03DD6FE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A962650-9B60-4061-A062-278A03DD6FE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A962650-9B60-4061-A062-278A03DD6FE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A962650-9B60-4061-A062-278A03DD6FE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9B180B5-73ED-41B6-AF02-E531BDE86103}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9B180B5-73ED-41B6-AF02-E531BDE86103}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9B180B5-73ED-41B6-AF02-E531BDE86103}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9B180B5-73ED-41B6-AF02-E531BDE86103}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
