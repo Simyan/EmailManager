@@ -7,12 +7,19 @@ public static class EmailManagerEndpoints
 {
     public static void Map(WebApplication app)
     {
-        app.MapGet("/", () => "Hello World!");
-        app.MapPost("/registerEmailInbox", async (EmailManager.Shared.ConnectionInfo request, IEmailManagerService service) =>
+        app.MapGet("/", () => "Hello I am EmailManager!");
+        app.MapPost("/registerEmailInbox", 
+            async (
+                EmailManager.Shared.ConnectionInfo request, 
+                IEmailManagerService service) =>
         {
            await service.RegisterEmailInbox(request);
         });
-        app.MapGet("/fetchUsageOverview", () => "");
+        app.MapGet("/fetchTopMostReceivedEmails", 
+            async (
+                    string emailId, IEmailManagerService service) => 
+                    await service.FetchTopMostReceivedEmails(emailId)
+                   );
         app.MapGet("/emailcount", () => "Hello World!");
     }
 }

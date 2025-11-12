@@ -8,6 +8,7 @@ namespace EmailManager.Application;
 public interface IEmailManagerService
 {
     public Task RegisterEmailInbox(ConnectionInfo connectionInfo);
+    public Task<List<EmailOverview>> FetchTopMostReceivedEmails(string emailId);
 }
 
 public interface IEmailManagerServiceForProcessor
@@ -23,10 +24,28 @@ public class EmailManagerService : IEmailManagerService,  IEmailManagerServiceFo
         _mailKitService = mailKitService;
         _dbContext = dbContext;
     }
-
-    public async Task<List<EmailOverview>> FetchEmailOverview()
+    
+    public async Task<List<EmailOverview>> FetchTopMostReceivedEmails(string emailId)
     {
-        throw new NotImplementedException();
+        return await _dbContext
+            .EmailDetails
+            .Where(x => x.Inbox.Email == emailId)
+            .GroupBy(x => new { x.SenderAddress, x.SenderName })
+            .Select(x => new EmailOverview
+            (
+                x.Key.SenderAddress,
+                x.Key.SenderName, 
+                x.Min(s => s.SentOn),
+                x.Max(s => s.SentOn),
+                x.Count(),
+                x
+                    .OrderByDescending(o => o.SentOn)
+                    .Select(s => s.Subject)
+                    .Take(5)
+            ))
+            .OrderByDescending(o => o.Frequency)
+            .Take(50)
+            .ToListAsync();
     }
 
     public async Task RegisterEmailInbox(ConnectionInfo connectionInfo)
