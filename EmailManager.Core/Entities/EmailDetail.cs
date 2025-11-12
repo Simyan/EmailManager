@@ -9,6 +9,8 @@ public class EmailDetail
     public string SenderName { get; private set; } = string.Empty;
     public string Subject { get; private set; } = string.Empty;
     public DateTime SentOn { get; private set; }
+
+    public string? Category { get; private set; } = null;
     public Guid InboxId { get; private set; }
     public Inbox Inbox { get; private set; } = null!;
 
@@ -22,5 +24,7 @@ public class EmailDetail
         SentOn = email.SentOn;
         InboxId = inboxId;
     }
+    
+    public void SetCategory(string category) => Category = category;
 }
 

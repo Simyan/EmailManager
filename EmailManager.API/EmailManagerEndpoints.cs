@@ -21,5 +21,12 @@ public static class EmailManagerEndpoints
                     await service.FetchTopMostReceivedEmails(emailId)
                    );
         app.MapGet("/emailcount", () => "Hello World!");
+        app.MapPost("/categorizeEmails", 
+            async (
+                EmailManager.Shared.EmailIdsByCategory request, 
+                IEmailManagerService service) =>
+            {
+                await service.CategorizeEmails(request);
+            });
     }
 }

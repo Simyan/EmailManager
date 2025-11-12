@@ -9,6 +9,7 @@ public interface IEmailManagerService
 {
     public Task RegisterEmailInbox(ConnectionInfo connectionInfo);
     public Task<List<EmailOverview>> FetchTopMostReceivedEmails(string emailId);
+    public Task CategorizeEmails(EmailIdsByCategory emailIdsByCategory);
 }
 
 public interface IEmailManagerServiceForProcessor
@@ -23,6 +24,22 @@ public class EmailManagerService : IEmailManagerService,  IEmailManagerServiceFo
     {
         _mailKitService = mailKitService;
         _dbContext = dbContext;
+    }
+
+    public async Task CategorizeEmails(EmailIdsByCategory emailIdsByCategory)
+    {
+        var entities = await _dbContext.EmailDetails
+            .Where(x => 
+                emailIdsByCategory.EmailIds.Contains(x.SenderAddress) &&
+                x.Inbox.Email == emailIdsByCategory.InboxEmailId)
+            .ToListAsync();
+
+        foreach (var entity in entities)
+        {
+            entity.SetCategory(emailIdsByCategory.Category);
+        }
+
+        await _dbContext.SaveChangesAsync();
     }
     
     public async Task<List<EmailOverview>> FetchTopMostReceivedEmails(string emailId)
